@@ -241,6 +241,8 @@ This project uses the complete Dyna-Q reinforcement learning algorithm for optim
 - jszip - ZIP file handling
 - idb - IndexedDB wrapper
 
+---
+
 ### 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
