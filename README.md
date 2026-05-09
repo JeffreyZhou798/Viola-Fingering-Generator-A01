@@ -394,14 +394,22 @@ http://localhost:3000
    - Output Directory: （デフォルトを使用）
 4. デプロイ
 
+## License
+
+MIT License - See [LICENSE](../LICENSE) for details.
+
 ---
+
+
 
 ## ⚠️ Copyright Notice
 
 © 2026 Jeffrey Zhou. All rights reserved.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This repository and its contents are protected by copyright law.  
+No part of this project may be copied, reproduced, modified, or distributed without prior written permission from the author.
 
----
+Commercial use is strictly prohibited.
 
-*Built with ❤️ for music education by Jeffrey Zhou*
+
+*Built with ❤️ for music education*
