@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viola Fingering Generator v1.0 - Test Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .version {
+            text-align: center;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+        }
+        .info-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+        .info-box h2 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        .info-box p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .info-box strong {
+            color: #ffd700;
+        }
+        .section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+        .section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .test-file {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 5px solid #667eea;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .test-file strong {
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        .checklist {
+            list-style: none;
+            padding-left: 0;
+        }
+        .checklist li {
+            padding: 12px;
+            margin: 8px 0;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .checklist li:before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            margin: 10px;
+        }
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        .button-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .performance-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .performance-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        .performance-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .performance-table tr:last-child td {
+            border-bottom: none;
+        }
+        .performance-table tr:hover {
+            background: #f5f5f5;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎻 Viola Fingering Generator</h1>
+        <div class="version">Version 1.0.0 - Parallel Multi-threading</div>
+        
+        <div class="info-box">
+            <h2>🚀 What's New</h2>
+            <p><strong>🎻 Viola-Specific Rules!</strong> Tuned for viola with CGDA tuning, 1-2-3-4 fingering, and low-position preference</p>
+            <p><strong>⚡ 3-4x Faster Processing!</strong> Now using Web Workers for parallel training</p>
+            <p><strong>🖥️ Smart Device Detection:</strong> Automatically uses 4/2/1 workers based on your CPU</p>
+            <p><strong>💾 Smart Caching:</strong> Repeated files load instantly</p>
+        </div>
+
+        <div class="section">
+            <h2>📊 Expected Performance</h2>
+            <table class="performance-table">
+                <thead>
+                    <tr>
+                        <th>File Type</th>
+                        <th>4-Core PC</th>
+                        <th>2-Core PC</th>
+                        <th>Single-Core</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Simple (10-30 notes)</strong></td>
+                        <td><span class="highlight">4-8 sec</span></td>
+                        <td>8-15 sec</td>
+                        <td>15-30 sec</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medium (50-100 notes)</strong></td>
+                        <td><span class="highlight">14-27 sec</span></td>
+                        <td>26-53 sec</td>
+                        <td>50-100 sec</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Complex (200+ notes)</strong></td>
+                        <td><span class="highlight">32-65 sec</span></td>
+                        <td>63-126 sec</td>
+                        <td>120-240 sec</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cached Files</strong></td>
+                        <td colspan="3" style="text-align: center;"><span class="highlight">&lt;1 second</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>🎵 Test Files Available</h2>
+            <p style="margin-bottom: 20px;">Test with viola scores from the CompositionExamples/中提琴乐谱 folder:</p>
+            
+            <div class="test-file">
+                <strong>1. lightly-row.musicxml</strong> - Lightly Row (57 notes, beginner level)
+            </div>
+            <div class="test-file">
+                <strong>2. twinkle-twinkle-little-star-ensenanzas-basicas-de-viola.musicxml</strong> - Twinkle Twinkle Little Star (113 notes, beginner)
+            </div>
+            <div class="test-file">
+                <strong>3. canon-in-d-viola.musicxml</strong> - Canon in D (828 playable notes after filtering, advanced)
+            </div>
+            <p style="margin-top: 15px; color: #666;">Note: All files also available in .mxl format (compressed).</p>
+        </div>
+
+        <div class="section">
+            <h2>✅ Testing Checklist</h2>
+            <ul class="checklist">
+                <li>Open browser console (Press F12)</li>
+                <li>Upload each test file</li>
+                <li>Check worker count in console (should show 1, 2, or 4 workers)</li>
+                <li>Watch parallel training progress bars</li>
+                <li>Verify all notes receive fingering</li>
+                <li>Download result file</li>
+                <li>Test cache: upload same file again (should be instant)</li>
+                <li>Try all three languages (EN/中文/日本語)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🔍 What to Look For in Console</h2>
+            <p style="margin-bottom: 15px;">Expected console output pattern:</p>
+            <pre style="background: #2d2d2d; color: #f8f8f2; padding: 20px; border-radius: 8px; overflow-x: auto; line-height: 1.6;">
+🎻 Starting processing for: [filename]
+📄 Parsing MusicXML...
+✅ Parsed X notes
+💻 High-end PC detected (8 cores), using 4 workers
+🚀 Starting parallel training with 4 workers
+🎻 Initializing Q-table with viola constraint rules...
+🔧 Worker started with seed XXXX, 2500 episodes
+🔧 Worker started with seed XXXX, 2500 episodes
+🔧 Worker started with seed XXXX, 2500 episodes
+🔧 Worker started with seed XXXX, 2500 episodes
+✅ Worker completed training
+✅ Worker completed training
+✅ Worker completed training
+✅ Worker completed training
+🔄 Merging Q-tables from all workers...
+✅ Merged XXX states from 4 workers
+🎯 Extracting optimal policy from merged Q-table...
+✅ Generated fingering for all X notes
+📝 Writing result to MusicXML...
+✅ Processing complete!</pre>
+        </div>
+
+        <div class="button-container">
+            <a href="http://localhost:3000" class="button" target="_blank">🚀 Open Application</a>
+        </div>
+
+        <div class="footer">
+            <p><strong>Development Server:</strong> http://localhost:3000</p>
+            <p><strong>Status:</strong> ✅ Ready for Testing</p>
+            <p><strong>Version:</strong> 1.0.0 (Parallel Multi-threading)</p>
+            <p style="margin-top: 15px;">© 2026 Viola Fingering Generator - Built with ❤️ for music education</p>
+        </div>
+    </div>
+</body>
+</html>
