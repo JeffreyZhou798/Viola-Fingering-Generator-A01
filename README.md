@@ -6,6 +6,8 @@ An AI-powered viola fingering generation system using **complete Dyna-Q reinforc
 [![Next.js](https://img.shields.io/badge/Next.js-14-000000?logo=next.js)](https://nextjs.org/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
+**🔗 [Live Demo](https://viola-fingering-generator-a01.vercel.app/)** | **📂 [GitHub Repository](https://github.com/JeffreyZhou798/Viola-Fingering-Generator-A01)**
+
 [English](#english) | [中文](#中文) | [日本語](#日本語)
 
 ---
@@ -247,6 +249,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 中文
 
+**🔗 [在线试用](https://viola-fingering-generator-a01.vercel.app/)** | **📂 [GitHub 仓库](https://github.com/JeffreyZhou798/Viola-Fingering-Generator-A01)**
+
 ### 🌟 功能特性
 
 #### 🎯 完整 Dyna-Q 算法实现
@@ -323,6 +327,8 @@ http://localhost:3000
 ---
 
 ## 日本語
+
+**🔗 [ライブデモ](https://viola-fingering-generator-a01.vercel.app/)** | **📂 [GitHub リポジトリ](https://github.com/JeffreyZhou798/Viola-Fingering-Generator-A01)**
 
 ### 🌟 機能
 
